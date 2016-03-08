@@ -66,9 +66,9 @@ class SimpleSplitter {
       .filter(({ start, end }) => !this.noEmptyMatches || !start.eq(end));
   }
 
+  static split(params) {
+    return new SimpleSplitter(params).observe();
+  }
 }
 
 export default SimpleSplitter;
-export function split(params) {
-  return new SimpleSplitter(params).observe();
-}

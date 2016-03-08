@@ -5,7 +5,7 @@ var program      = require('commander');
 var fs           = require('fs');
 var StreamSearch = require('streamsearch');
 var Decimal      = require('decimal.js');
-var Splitter     = require('./dist/index.js');
+var mysql     = require('./dist/splitters/mysql');
 var MysqlHandler = require('./dist/MysqlbackupFileHandler.class.js');
 //var Splitter     = require('./src/index.es6');
 //var MysqlHandler = require('./src/MysqlbackupFileHandler.class.es6');
@@ -20,5 +20,10 @@ program
 if (program.args.length != 1) {
   program.outputHelp();
 } else {
-  new Splitter(program.args[0], new MysqlHandler()).process();
+  mysql(program.args[0])
+    .subscribe(
+      console.log,
+      console.log,
+      () => console.log('completed')
+    )
 }

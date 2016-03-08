@@ -4,18 +4,18 @@ import path from 'path';
 import fs from 'fs';
 import { Observable } from 'rx';
 
-const splitToken = '\n--\n-- Table structure for table';
+const splitToken       = '\n--\n-- Table structure for table';
 const splitTokenLength = splitToken.length;
 
-export default function(fullFilePath) {
+export default function (fullFilePath) {
   return Splitter.split({
-    stream        : fs.createReadStream(fullFilePath),
-    token         : splitToken,
-    noEmptyMatches: true
-  })
-    .flatMap(({ start, end }) => {
+      stream        : fs.createReadStream(fullFilePath),
+      token         : splitToken,
+      noEmptyMatches: true
+    })
+    .flatMap(({ start, end }, idx) => {
       return Observable.fromPromise(
-        FileUtils.readChunkOfFile(
+        FileUtils.readChunkOfFileToBuff(
           fullFilePath,
           start - splitTokenLength,
           start - splitTokenLength + splitTokenLength * 4 // safe guess :)
@@ -26,13 +26,13 @@ export default function(fullFilePath) {
           if (matches !== null && matches.length > 0) {
             return Observable.just(matches[1]);
           }
-          return Observable.empty();
+          return Observable.just(`_unknown_${idx}`);
         })
         .flatMap(tableName => {
           const fileExt = path.extname(fullFilePath);
           return Observable.fromPromise(
             FileUtils.copyChunkOfFileToAnother(
-              start - token.length,
+              start > 0 ? start - splitTokenLength : 0,
               end,
               fullFilePath,
               path.join(
@@ -43,4 +43,4 @@ export default function(fullFilePath) {
           );
         });
     });
-};
+}
