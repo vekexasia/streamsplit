@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb/base",
+  "rules"  : {
+    "key-spacing"    : [
+      2,
+      {
+        "align": "colon",
+        "afterColon": true
+      }
+    ],
+    "no-multi-spaces": [
+      2,
+      {
+        "exceptions": {
+          "VariableDeclarator": true,
+          "AssignmentExpression": true
+        }
+      }
+    ],
+    "comma-dangle"   : [2,"never"]
+  }
+}
