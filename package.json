@@ -1,6 +1,6 @@
 {
   "name": "streamsplit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Memory/CPU efficient stream splitter by token",
   "main": "index.js",
   "scripts": {
@@ -53,6 +53,7 @@
     "rx": "^4.1.0",
     "streamsearch": "^0.1.2"
   },
-  "engines": { "node" : ">=0.12" }
-
+  "engines": {
+    "node": ">=0.12"
+  }
 }
