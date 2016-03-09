@@ -1,15 +1,32 @@
 {
-  "name": "dump_to_splitted",
+  "name": "streamsplit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Memory/CPU efficient stream splitter by token",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register",
-    "testw": "mocha --grep 'toBuffer' --grep 'bb' --grep 'start = 6' --watch --recursive --watch-extensions js --compilers js:babel-core/register 'test/**/*.js'",
-    "prepublish": "gulp"
+    "mocha-test": "mocha --compilers js:babel-core/register 'test/**/*.js'",
+    "test": "npm run lint && npm run mocha-test",
+    "prepublish": "gulp",
+    "lint": "eslint src/"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "stream",
+    "Rx",
+    "Reactive",
+    "split",
+    "boyer-moore",
+    "boyer-moore-horspool",
+    "horspool"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vekexasia/streamsplit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vekexasia/streamsplit/issues"
+  },
+  "author": "Andrea Baccega",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.4.0",
     "babel-plugin-add-module-exports": "^0.1.2",
@@ -26,7 +43,6 @@
     "isparta": "^4.0.0",
     "mocha": "^2.3.3",
     "moment": "^2.12.0",
-    "number-theory": "^1.1.0",
     "sinon": "^1.17.3",
     "stream-buffer": "^1.0.0",
     "stream-buffers": "^3.0.0"

@@ -37,4 +37,4 @@ export default function (params) {
       curBuffer = newCurBuffer;
       return chunkBuffer;
     });
-};
+}

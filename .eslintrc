@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb/base",
+  "extends": "./node_modules/eslint-config-airbnb/base.js",
   "rules"  : {
     "key-spacing"    : [
       2,

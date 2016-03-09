@@ -1,4 +1,3 @@
-import Decimal from 'decimal.js';
 import toBuffer from './tobuffer.js';
 import extend from 'extend';
 import { Observable } from 'rx';
@@ -17,4 +16,4 @@ export default function (params) {
         return Observable.throw(e);
       }
     });
-};
+}
