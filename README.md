@@ -1,10 +1,10 @@
 # streamsplit
 
-[![npm](https://img.shields.io/npm/l/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/v/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/dm/streamsplit.svg?style=flat-square)]() [![Coveralls](https://img.shields.io/coveralls/vekexasia/streamsplit.svg?style=flat-square)]() [![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)]()
+[![Travis](https://img.shields.io/travis/vekexasia/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/l/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/v/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/dt/streamsplit.svg?style=flat-square)]() [![Coveralls](https://img.shields.io/coveralls/vekexasia/streamsplit.svg?style=flat-square)]() [![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)]()
 
-**streamsplit**. is a utility Reactive Programming ([rx](https://www.npmjs.com/package/rx)) module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
+**streamsplit**. is a Reactive Programming ([rx](https://www.npmjs.com/package/rx)) module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
 
-This module was built with the main goal of splitting a large MySQL dump `.sql` file into multiple files (one per each table).
+This module was built with the main goal of splitting a large MySQL dump `.sql` file into multiple files (one per each table). ( npm -> `mysqldumpslit` )
 
 Thanks to the great [streamsearch](https://www.npmjs.com/package/streamsearch) library which uses the *Boyer-Moore-Horspool* algorithm (the same used in the Unix `grep` command) the token search is blazing fast and have a very low memory footprint.
 
