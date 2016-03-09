@@ -145,6 +145,7 @@ toBuffSplit({
   stream: readStream,
   token: ';'
 })
+  .map(buf => buf.toString('utf8')) // convert buf to string!
   .filter(item => !isNaN(item)) // filter out strings!
   .map(parseFloat) // remap item from "string representation of a number" to Number
   .filter(n => n % 2 == 0) // filter out odd numbers.
