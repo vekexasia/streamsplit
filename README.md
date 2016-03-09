@@ -1,5 +1,7 @@
 # streamsplit
 
+[![npm](https://img.shields.io/npm/l/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/v/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/dm/streamsplit.svg?style=flat-square)]() [![Coveralls](https://img.shields.io/coveralls/vekexasia/streamsplit.svg?style=flat-square)]() [![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)]()
+
 **streamsplit**. is a utility Reactive Programming ([rx](https://www.npmjs.com/package/rx)) module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
 
 This module was built with the main goal of splitting a large MySQL dump `.sql` file into multiple files (one per each table).
@@ -9,6 +11,10 @@ Thanks to the great [streamsearch](https://www.npmjs.com/package/streamsearch) l
 This library contains several splitters that will `emit` an item each time a chunk between the split token is found. 
 
 The Module is written in ES6 transpiled using the wonderful Babel library. 
+
+## Requirements
+
+ - node.js - v0.12 or newer!   
 
 ## Installation
 
