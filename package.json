@@ -7,7 +7,9 @@
     "mocha-test": "mocha --compilers js:babel-core/register 'test/**/*.js'",
     "test": "npm run lint && npm run mocha-test",
     "prepublish": "gulp",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "coverage": "nyc --reporter=html npm test",
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "stream",
@@ -34,6 +36,7 @@
     "babel-preset-stage-0": "^6.3.13",
     "chai": "^3.5.0",
     "commander": "^2.9.0",
+    "coveralls": "^2.11.8",
     "eslint": "^1.10.3",
     "eslint-config-airbnb": "^4.0.0",
     "gulp": "^3.9.0",
@@ -43,6 +46,7 @@
     "isparta": "^4.0.0",
     "mocha": "^2.3.3",
     "moment": "^2.12.0",
+    "nyc": "^6.0.0",
     "sinon": "^1.17.3",
     "stream-buffer": "^1.0.0",
     "stream-buffers": "^3.0.0"

@@ -2,6 +2,7 @@ import Splitter from '../src/core.class';
 import { expect } from 'chai';
 import streamBuffers from 'stream-buffers';
 import sinon from 'sinon';
+import { Observable } from 'rx';
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions, no-new, max-len */
 
@@ -36,6 +37,11 @@ describe('SimpleSplitter', () => {
       expect(() => {
         new Splitter({ token: '\n' });
       }).to.throw();
+    });
+
+    it('.split should return observable', () => {
+      expect(Splitter.split({stream: readableStreamBuffer, token:'\n'})).to.be.an.instanceof(Observable);
+
     });
   });
   describe('splitter', () => {
