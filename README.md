@@ -1,6 +1,12 @@
 # streamsplit
 
-[![Travis](https://img.shields.io/travis/vekexasia/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/l/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/v/streamsplit.svg?style=flat-square)]() [![npm](https://img.shields.io/npm/dt/streamsplit.svg?style=flat-square)]() [![Coveralls](https://img.shields.io/coveralls/vekexasia/streamsplit.svg?style=flat-square)]() [![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)]()
+[![Travis](https://img.shields.io/travis/vekexasia/streamsplit.svg?style=flat-square)](https://travis-ci.org/vekexasia/streamsplit) 
+[![npm](https://img.shields.io/npm/l/streamsplit.svg?style=flat-square)](https://www.npmjs.com/package/streamsplit) 
+[![npm](https://img.shields.io/npm/v/streamsplit.svg?style=flat-square)](https://www.npmjs.com/package/streamsplit) 
+[![npm](https://img.shields.io/npm/dt/streamsplit.svg?style=flat-square)](https://www.npmjs.com/package/streamsplit) 
+[![Coverage Status](https://img.shields.io/coveralls/vekexasia/streamsplit.svg?style=flat-square)](https://coveralls.io/github/vekexasia/streamsplit)
+[![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)](https://www.npmjs.com/package/streamsplit)
+
 
 **streamsplit**. is a Reactive Programming ([rx](https://www.npmjs.com/package/rx)) module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
 
