@@ -2,7 +2,7 @@ import Splitter from '../src/core.class';
 import { expect } from 'chai';
 import streamBuffers from 'stream-buffers';
 import sinon from 'sinon';
-import { Observable } from 'rx';
+import { Observable } from 'rxjs';
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions, no-new, max-len */
 
@@ -76,7 +76,7 @@ describe('SimpleSplitter', () => {
           readableStreamBuffer.stop();
           sinon.spy(readableStreamBuffer, 'on');
           splitter.observe()
-            .flatMap(splitter.observe())
+            .flatMap(() => splitter.observe())
             .toArray()
             .subscribe(
               n => expect(n.length).is.equal(0),

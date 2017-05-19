@@ -54,7 +54,9 @@
   "dependencies": {
     "decimal.js": "^5.0.7",
     "extend": "^3.0.0",
+    "long": "^3.2.0",
     "rx": "^4.1.0",
+    "rxjs": "^5.4.0",
     "streamsearch": "^0.1.2"
   },
   "engines": {

@@ -1,6 +1,6 @@
 import StreamSearch from 'streamsearch';
-import Decimal from 'decimal.js';
-import { Observable, Subject } from 'rx';
+import Long from 'long';
+import { Observable, Subject } from 'rxjs';
 
 class SimpleSplitter {
 
@@ -27,21 +27,21 @@ class SimpleSplitter {
 
     function emitData(data) {
       process.nextTick(() => {
-        subject.onNext(data);
+        subject.next(data);
       });
     }
 
-    let nextStart   = new Decimal(0);
-    let possibleEnd = new Decimal(0);
+    let nextStart   = new Long(0);
+    let possibleEnd = new Long(0);
 
     this.ss.on('info', (isMatch, data, start = 0, end = 0) => {
       if (isMatch) {
         emitData({
-          start: new Decimal(nextStart),
+          start: new Long(nextStart),
           end  : possibleEnd.add(end - start)
         });
         nextStart   = possibleEnd.add(end - start).add(this.token.length);
-        possibleEnd = new Decimal(nextStart);
+        possibleEnd = new Long(nextStart);
       } else {
         possibleEnd = possibleEnd.add(end - start);
       }
@@ -55,7 +55,7 @@ class SimpleSplitter {
           end  : possibleEnd
         });
       }
-      process.nextTick(() => subject.onCompleted());
+      process.nextTick(() => subject.complete());
     });
     this._subject = subject;
     return this._subject;

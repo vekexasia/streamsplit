@@ -1,4 +1,4 @@
-import Decimal from 'decimal.js';
+import Long from 'long';
 import Splitter from '../core.class';
 import extend from 'extend';
 
@@ -10,7 +10,7 @@ import extend from 'extend';
 export default function (params) {
   const mySplitter = new Splitter(extend(params, { noEmptyMatches: true }));
   let curBuffer    = new Buffer(0);
-  let curBuffPos   = new Decimal(0);
+  let curBuffPos   = new Long(0);
   mySplitter.ss.on('info', (isMatch, data = new Buffer(0), start = 0, end = 0) => {
     const tmpBuff = new Buffer(end - start);
     data.copy(tmpBuff, 0, start, end);
