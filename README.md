@@ -8,7 +8,7 @@
 [![node](https://img.shields.io/node/v/streamsplit.svg?style=flat-square)](https://www.npmjs.com/package/streamsplit)
 
 
-**streamsplit**. is a Reactive Programming ([rx](https://www.npmjs.com/package/rx)) module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
+**streamsplit**. is a Reactive Programming **rxjs** module which provides a straight-forward and both memory & CPU efficient way to split [readable streams](https://nodejs.org/api/stream.html#stream_class_stream_readable) into chunks of data.
 
 This module was built with the main goal of splitting a large MySQL dump `.sql` file into multiple files (one per each table). ( npm -> `mysqldumpslit` )
 
@@ -168,5 +168,5 @@ toBuffSplit({
   );
 ```
 
-If you're unfamiliar with the RX world I suggest you take a look at [Getting started with Rx](https://github.com/Reactive-Extensions/RxJS/tree/master/doc#getting-started-with-rxjs)
+If you're unfamiliar with the RX world I suggest you take a look at [the documentation](http://reactivex.io/rxjs/)
 
