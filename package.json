@@ -6,7 +6,7 @@
   "scripts": {
     "mocha-test": "mocha --compilers js:babel-core/register 'test/**/*.js'",
     "test": "npm run lint && npm run mocha-test",
-    "package": "gulp",
+    "prepublish": "gulp",
     "lint": "eslint src/",
     "coverage": "nyc --reporter=html npm test",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
