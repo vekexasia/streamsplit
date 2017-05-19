@@ -1,8 +1,6 @@
 import toBuffer from '../../src/splitters/tobuffer.js';
 import { expect } from 'chai';
 import streamBuffers from 'stream-buffers';
-import sinon from 'sinon';
-import { Observable } from 'rx';
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions, no-new */
 
@@ -56,6 +54,43 @@ describe('toBuffer', () => {
           done
         );
     });
+
+    // describe('1GB larger buffer', () => {
+    //   it('should not fail', function (done) {
+    //     this.timeout(300000);
+    //     const oneMegaByte = Math.pow(2, 20);
+    //     let mbStr         = '';
+    //     let tokenStr      = '';
+    //     for (let i = 0; i < oneMegaByte; i++) {
+    //       mbStr += 'a';
+    //       tokenStr += 'b';
+    //     }
+    //     tokenStr += '\n';
+    //     readableStreamBuffer = new streamBuffers.ReadableStreamBuffer({
+    //       frequency: 10,   // in milliseconds.
+    //       chunkSize: Math.pow(2, 20)  // in bytes. 1MB
+    //     });
+    //     const stream = fs.createWriteStream('/tmp/file', {bufferSize: 1});
+    //     for (let i = 0; i < Math.pow(2, 12); i++) {
+    //       stream.write(mbStr, 'utf8');
+    //     }
+    //     stream.write('a'); // Exceeding byte;
+    //     stream.write(tokenStr, 'utf8', () => {
+    //       stream.end();
+    //       console.log('here');
+    //       splitter = toBuffer({ stream: fs.createReadStream('/tmp/file'), token: tokenStr });
+    //
+    //       splitter
+    //         .subscribe(
+    //           (buf) => {
+    //             console.log('diocan', buf.length);
+    //           },
+    //           done,
+    //           done
+    //         );
+    //     });
+    //   });
+    // });
     describe('empty chunks', () => {
       it('should handle correctly stream ending with token emitting only 2 items', done => {
         readableStreamBuffer.put('a\na\n');
