@@ -1,6 +1,6 @@
 {
   "name": "streamsplit",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Memory/CPU efficient stream splitter by token",
   "main": "index.js",
   "scripts": {
