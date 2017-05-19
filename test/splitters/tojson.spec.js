@@ -1,8 +1,6 @@
 import toJson from '../../src/splitters/tojson.js';
 import { expect } from 'chai';
 import streamBuffers from 'stream-buffers';
-import sinon from 'sinon';
-import { Observable } from 'rx';
 /* eslint-env node, mocha */
 /* eslint-disable no-unused-expressions, no-new */
 describe('toJSON', () => {
@@ -24,15 +22,15 @@ describe('toJSON', () => {
       );
   });
   it('should emit one item and one error if json is unparseable at some point', done => {
-    readableStreamBuffer.push(JSON.stringify({ a: 2 }), 'utf8')
-    readableStreamBuffer.push('\n', 'utf8')
-    readableStreamBuffer.push(JSON.stringify({ a: 2 }).substr(1), 'utf8')
+    readableStreamBuffer.push(JSON.stringify({ a: 2 }), 'utf8');
+    readableStreamBuffer.push('\n', 'utf8');
+    readableStreamBuffer.push(JSON.stringify({ a: 2 }).substr(1), 'utf8');
     readableStreamBuffer.stop();
     let emitted = false;
     toJson({ stream: readableStreamBuffer })
       .subscribe(
         () => emitted = true,
-        e => {
+        (e) => {
           expect(emitted).to.be.true;
           done();
         }
